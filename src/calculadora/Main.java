@@ -224,7 +224,14 @@ public class Main extends JFrame {
 		JButton buttonPlusMinus = new JButton("+/-");
 		buttonPlusMinus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//TODO
+				Double numero = Double.parseDouble(pantalla.getText());
+				if (numero < 0){
+					numero = numero * -1;
+					pantalla.setText(numero.toString());
+				}else{
+					numero = numero * -1;
+					pantalla.setText(numero.toString());
+				}		
 			}
 		});
 		buttonPlusMinus.setBounds(10, 276, 98, 39);
@@ -240,10 +247,13 @@ public class Main extends JFrame {
 					pantalla.setText(String.valueOf(resultado));
 				} else if (operador.equals(buttonMinus.getText())){
 					resultado = numero1 - numero2;
+					pantalla.setText(String.valueOf(resultado));
 				} else if (operador.equals(buttonEntre.getText())){
 					resultado = numero1 / numero2;
+					pantalla.setText(String.valueOf(resultado));
 				} else if (operador.equals(buttonPor.getText())){
 					resultado = numero1 * numero2;
+					pantalla.setText(String.valueOf(resultado));
 				}
 			}
 		});
